@@ -1,0 +1,13 @@
+.ComponentList ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ComponentList ul > li {
+    padding: var(--space-2) 0;
+    cursor: pointer;
+    border-top-style: solid;
+    border-width: 1px;
+    border-color: var(--primary-dark-2);
+}

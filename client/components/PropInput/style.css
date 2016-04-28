@@ -1,0 +1,104 @@
+.PropInput {
+    position: relative;
+}
+
+.PropInput > textarea,
+.PropInput > select,
+.PropInput > input[type="text"],
+.PropInput > input[type="number"] {
+    appearance: none;
+    width: 100%;
+    padding: 0.4rem;
+    border: none;
+    font-size: 0.7rem;
+    background-color: var(--primary-light-2);
+    color: var(--primary-text-light);
+    outline: 0;
+    box-shadow: none;
+    border-radius: 3px;
+}
+
+.PropInput > textarea {
+    height: 100px;
+}
+
+.PropInput > input[type="number"] {
+    width: 50%;
+}
+
+.PropInput input:focus,
+.PropInput textarea:focus {
+    border: none;
+    background-color: var(--primary-light-3);
+}
+
+.PropInput > select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 1em;
+    background: #34495e;
+    pointer-events: none;
+}
+
+.PropInput label,
+.PropInput .Label {
+    display: block;
+    padding: var(--space-1) 0;
+}
+
+.PropInput input[type="checkbox"] {
+    display: none;
+}
+
+.PropInput input[type="checkbox"] + label::selection {
+    background-color: transparent;
+}
+
+.PropInput input[type="checkbox"]:checked + label:after {
+    left: 50%;
+}
+
+.PropInput > input[type="checkbox"] + label {
+    border-radius: 2em;
+    padding: 2px;
+    transition: left .4s ease, background-color .4s ease;
+    box-sizing: border-box;
+    background-color: var(--primary-light-2);
+    outline: 0;
+    display: block;
+    width: 3em;
+    height: 1em;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+}
+
+.PropInput > input[type="checkbox"] + label:after,
+.PropInput > input[type="checkbox"] + label:before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 150%;
+    top: -25%;
+}
+
+.PropInput > input[type="checkbox"] + label:after {
+    border-radius: 50%;
+    box-shadow: 0 2px 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    transition: left .2s ease, background-color .4s ease;
+    left: 0;
+}
+
+.PropInput > input[type="checkbox"] + label:before {
+    display: none;
+}
+
+.PropInput > input[type="checkbox"]:checked + label {
+    background-color: #0aa0dc;
+    background-color: var(--secondary-1);
+}

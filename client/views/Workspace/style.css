@@ -1,0 +1,12 @@
+.WorkspaceView {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.Workspace {
+    display: flex;
+    flex: 1 1 auto;
+    overflow: hidden;
+    height: 100%;
+}

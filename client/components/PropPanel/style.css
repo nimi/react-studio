@@ -1,0 +1,20 @@
+.PropPanel {
+    flex: 0 0 300px;
+    padding: var(--space-2);
+    background: var(--primary-light-1);
+    margin: var(--space-2) 0;
+    overflow: scroll;
+}
+
+.PropPanel h4 {
+    background-color: var(--secondary-1);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-top: -1rem;
+    padding: var(--space-2);
+    color: var(--primary-text-light);
+}
+
+.PropInputs {
+    overflow: scroll;
+}
