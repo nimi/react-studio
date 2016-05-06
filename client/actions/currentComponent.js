@@ -6,7 +6,9 @@ const Actions = {
 
 	setCurrentComponent: createAction('set current component'),
 
-	updateComponentProps: createAction('update component props')
+	updateComponentProps: createAction('update component props'),
+
+	updateComponentPropTypes: createAction('update component prop types')
 
 };
 
