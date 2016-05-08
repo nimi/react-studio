@@ -4,7 +4,9 @@ const Actions = {
 
 	updateStagePosition: createAction('update stage position'),
 
-	resetStagePostion: createAction('reset stage position')
+	resetStagePostion: createAction('reset stage position'),
+
+	toggleStage: createAction('toggle stage')
 
 };
 
