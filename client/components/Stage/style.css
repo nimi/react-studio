@@ -1,7 +1,43 @@
 .Stage {
+    flex: 0 0 100%;
+    position: relative;
+    width: 100%;
+    min-height: 20px;
+}
+
+.Stage > .Header {
+    display: flex;
+    font-weight: 200;
+    padding: 8px var(--space-1);
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.Stage > .Header h5 {
     flex: 1 1 auto;
-    margin: var(--space-2);
-    height: auto;
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--primary-primary-dark-1);
+    margin: 0;
+}
+
+.Stage > .Header button {
+    color: var(--primary-dark-1);
+    font-size: 20px;
+    line-height: 18px;
+    font-weight: 100;
+}
+
+.Stage .Chevron {
+    border-style: solid;
+    border-width: 3px 3px 0 0;
+    display: inline-block;
+    height: 14px;
+    position: relative;
+    transform: rotate(135deg);
+    vertical-align: top;
+    width: 14px;
 }
 
 .StageGrid {
@@ -10,7 +46,12 @@
                       linear-gradient(90deg, var(--primary-light-1) 1px, transparent 1px);
     background-size: 20px 20px, 20px 20px;
     background-position: -1px -1px, -1px -1px;
-    height: 100%;
+    height: 175px;
     text-align: center;
-    padding: var(--space-4);
+    padding: var(--space-3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
 }
