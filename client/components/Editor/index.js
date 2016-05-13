@@ -6,10 +6,10 @@ import 'brace/mode/json';
 import 'brace/mode/javascript';
 import 'brace/theme/idle_fingers';
 
-
 class Editor extends Component {
 	static propTypes = {
 		height: PropTypes.string,
+		editorProps: PropTypes.object,
 		mode: PropTypes.string,
 		showGutter: PropTypes.bool,
 		theme: PropTypes.string,
@@ -17,13 +17,15 @@ class Editor extends Component {
 		onChange: PropTypes.func,
 		defaultValue: PropTypes.oneOfType([
 			PropTypes.object,
-			PropTypes.array
+			PropTypes.array,
+			PropTypes.func
 		]),
 		validate: PropTypes.func
 	}
 
 	static defaultProps = {
 		height: '200px',
+		editorProps: {$blockScrolling: Infinity},
 		mode: 'json',
 		showGutter: false,
 		theme: 'idle_fingers',
@@ -35,14 +37,18 @@ class Editor extends Component {
 		const {validate} = this.props;
 		const {value} = nextProps;
 
-		return !this._isStringified(value) ?
+		return (this._isString(value) || this._isFunction(value)) ?
 			!validate(value)
 			:
 			!validate(JSON.stringify(value));
 	}
 
-	_isStringified(val) {
-		return Boolean(val) && typeof val !== 'string';
+	_isString(val) {
+		return Boolean(val) && typeof val === 'string';
+	}
+
+	_isFunction(val) {
+		return Boolean(val) && typeof val === 'function'
 	}
 
 	_onChange(val) {
@@ -57,8 +63,6 @@ class Editor extends Component {
 			onChange: val => this._onChange(val),
 			value: !value ? JSON.stringify(defaultValue) : null
 		};
-
-		console.log(props);
 
 		return (
 			<AceEditor {...props} />

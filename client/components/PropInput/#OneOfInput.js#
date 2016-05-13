@@ -27,7 +27,7 @@ class OneOfInput extends Component {
 			<option
 				key={i}
 				value={i}
-			>
+ 			>
 				{opt}
 			</option>
 		));

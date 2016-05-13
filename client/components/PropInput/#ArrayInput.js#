@@ -18,12 +18,15 @@ class ArrayInput extends Component {
 	_onChange(val) {
 		const {prop, handleChange} = this.props;
 
+		console.log(val, prop);
+
 		handleChange({[prop]: JSON.parse(val)});
 	}
 
 	_validateArray(val) {
 		if (isValidJson(val)) {
 			const value = JSON.parse(val);
+			console.log('_validateArry', typeof val, );
 			return Array.isArray(value);
 		}
 		return false;
@@ -43,6 +46,8 @@ class ArrayInput extends Component {
 
 	render() {
 		const editorProps = this._editorProps();
+
+		console.log(editorProps);
 
 		return (
 			<div className={style.PropInput}>

@@ -102,3 +102,15 @@
     background-color: #0aa0dc;
     background-color: var(--secondary-1);
 }
+
+.PropInput > .AceEditor {
+    height: 200px;
+}
+
+/* One of Input */
+
+.OneOfInput > .PropInput > label {
+    visibility: hidden;
+    height: 5px;
+    padding: 0;
+}

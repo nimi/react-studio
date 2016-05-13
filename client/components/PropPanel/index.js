@@ -11,8 +11,10 @@ class PropPanel extends Component {
 		component: PropTypes.func,
 		componentName: PropTypes.string,
 		componentProps: PropTypes.object,
+		componentPropTypes: PropTypes.object,
 		defaultComponentProps: PropTypes.object,
-		handlePropChange: PropTypes.func
+		handlePropChange: PropTypes.func,
+		handlePropTypeChange: PropTypes.func
 	}
 
 	static defaultProps = {
@@ -45,6 +47,7 @@ class PropPanel extends Component {
 				const {type, values, options } = getPropType(checkPropType);
 				const defaultValue = this.props.defaultComponentProps[prop] || values;
 				const value = this.props.componentProps[prop] || null;
+				const selectedType = this.props.componentPropTypes[prop] || null;
 
 				return (
 					<PropInput
@@ -53,9 +56,11 @@ class PropPanel extends Component {
 						defaultValue={defaultValue}
 						value={value}
 						type={type}
+						selectedType={selectedType}
 						options={options}
 						prop={prop}
 						handleChange={this.props.handlePropChange}
+						handleTypeChange={this.props.handlePropTypeChange}
 					/>
 				);
 			});
